@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: procesador-horarios
+  kafka:
+    bootstrap-servers: 18.211.29.243:29092
+    consumer:
+      group-id: grupo-procesamiento
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.value.default.type: "cl.duoc.procesador_horarios.model.Ubicacion"
+        spring.json.use.type.headers: false
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+server:
+  port: 8082
