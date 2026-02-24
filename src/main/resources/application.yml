@@ -2,7 +2,7 @@ spring:
   application:
     name: procesador-horarios
   kafka:
-    bootstrap-servers: 54.85.193.251:29092
+    bootstrap-servers: 23.23.229.144:29092
     consumer:
       group-id: grupo-procesamiento
       auto-offset-reset: earliest
